@@ -14,25 +14,28 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Make</th>
+                        <th>description</th>
                         <th>Model</th>
                         <th>Produce_on</th>
                         <th>Action</th>
+                        <th>Image</th>
                     </tr>
                 </thead>
                 <tbody>
                 @foreach ($cars as $car)
                     <tr>
                         <td>{{ $car->id }}</td>
-                        <td>{{ $car->make }}</td>
+                        <td>{{ $car->description }}</td>
                         <td>{{ $car->model }}</td>
                         <td>{{ $car->produce_on}}</td>
+                       
                         <td>
                             {{-- <a name="" id="" class="btn btn-primary" href="/car/{{$car->id}}" role="button">Chi tiet</a> --}}
                             {{-- <a name="" id="" class="btn btn-primary" href="{{route('car.detail',$car->id)}}" role="button">Update</a> --}}
                             {{-- <a name="" id="" class="btn btn-primary" href="{{ action([App\Http\Controllers\CarController::class, 'show'], ['id'=> $car->id])}}" role="button">Detail</a> --}}
                             <a name="" id="" class="btn btn-primary" href="{{ action([App\Http\Controllers\CarController::class, 'show'], ['car'=> $car->id])}}" role="button">Detail</a>
                         </td>
+                        <td><img src="{{ asset('image/'.$car->image) }}" alt="Image" width="100" height="80"></td>
                     </tr>
                 @endforeach
                 </tbody>

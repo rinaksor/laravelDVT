@@ -13,7 +13,7 @@
         <h3 class="text-center" style="color:red;">Chi tiet xe</h3>
         <div class="detail d-flex mt-4">
             <div class="image">
-                <img src="{{ $car->image }}" alt="Image" width="600" height="400">
+                <img src="{{ asset('image/'.$car->image) }}" alt="Image" width="600" height="400">
             </div>
             <div class="product-detail">
                 <ul class="list-group p-3">
